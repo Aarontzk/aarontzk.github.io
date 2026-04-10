@@ -259,10 +259,19 @@
             margin: 0 auto;
         }
 
-        .building-carousel-wrap .carousel-inner img {
+        .building-carousel-wrap .carousel-inner img,
+        .building-carousel-wrap .carousel-inner video {
             width: 100%;
             border-radius: 12px;
             object-fit: cover;
+            display: block;
+        }
+
+        .about-featured .carousel-inner video {
+            width: 100%;
+            display: block;
+            object-fit: cover;
+            aspect-ratio: 4/5;
         }
 
         /* tombol prev/next */
@@ -478,10 +487,56 @@
                         </p>
                     </div>
 
-                    <!-- kanan: kartu featured post instagram -->
+                    <!-- kanan: kartu featured post instagram dengan carousel -->
                     <div class="col-lg-5" data-aos="fade-up" data-aos-delay="200">
                         <div class="about-featured">
-                            <img src="assetsdevfolio/img/about-post.png" alt="Make sense of the semester with Claude">
+                            <div id="makesenseCarousel" class="carousel slide" data-bs-ride="carousel">
+                                <div class="carousel-indicators">
+                                    <button type="button" data-bs-target="#makesenseCarousel" data-bs-slide-to="0" class="active" aria-current="true"></button>
+                                    <button type="button" data-bs-target="#makesenseCarousel" data-bs-slide-to="1"></button>
+                                    <button type="button" data-bs-target="#makesenseCarousel" data-bs-slide-to="2"></button>
+                                    <button type="button" data-bs-target="#makesenseCarousel" data-bs-slide-to="3"></button>
+                                    <button type="button" data-bs-target="#makesenseCarousel" data-bs-slide-to="4"></button>
+                                    <button type="button" data-bs-target="#makesenseCarousel" data-bs-slide-to="5"></button>
+                                    <button type="button" data-bs-target="#makesenseCarousel" data-bs-slide-to="6"></button>
+                                    <button type="button" data-bs-target="#makesenseCarousel" data-bs-slide-to="7"></button>
+                                </div>
+                                <div class="carousel-inner">
+                                    <div class="carousel-item active">
+                                        <video autoplay muted loop playsinline>
+                                            <source src="assetsdevfolio/img/makesense/claudeai_1756929089_3713712408902110544_57458869031_1%20(1).mp4" type="video/mp4">
+                                        </video>
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="assetsdevfolio/img/makesense/claudeai_1756929089_3713712829238519666_57458869031_2%20(1).jpg" alt="Make sense of the semester with Claude">
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="assetsdevfolio/img/makesense/claudeai_1756929089_3713712829238504785_57458869031_3%20(1).jpg" alt="Make sense of the semester with Claude">
+                                    </div>
+                                    <div class="carousel-item">
+                                        <video autoplay muted loop playsinline>
+                                            <source src="assetsdevfolio/img/makesense/claudeai_1756929090_3713712586530891645_57458869031_4%20(1).mp4" type="video/mp4">
+                                        </video>
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="assetsdevfolio/img/makesense/claudeai_1756929089_3713712829154609900_57458869031_5%20(1).jpg" alt="Make sense of the semester with Claude">
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="assetsdevfolio/img/makesense/claudeai_1756929089_3713712829146237689_57458869031_6%20(1).jpg" alt="Make sense of the semester with Claude">
+                                    </div>
+                                    <div class="carousel-item">
+                                        <video autoplay muted loop playsinline>
+                                            <source src="assetsdevfolio/img/makesense/claudeai_1756929089_3713712409967476208_57458869031_7%20(1).mp4" type="video/mp4">
+                                        </video>
+                                    </div>
+                                </div>
+                                <button class="carousel-control-prev" type="button" data-bs-target="#makesenseCarousel" data-bs-slide="prev">
+                                    <span class="carousel-control-prev-icon"></span>
+                                </button>
+                                <button class="carousel-control-next" type="button" data-bs-target="#makesenseCarousel" data-bs-slide="next">
+                                    <span class="carousel-control-next-icon"></span>
+                                </button>
+                            </div>
                             <div class="about-featured-caption">
                                 <span class="ig-handle">@claudeai</span>
                                 <p>Class is in session with Claude. Organize your courses into Projects to create a living knowledge base for each subject.</p>
@@ -576,10 +631,16 @@
                             <button type="button" data-bs-target="#buildingCarousel" data-bs-slide-to="6"></button>
                             <button type="button" data-bs-target="#buildingCarousel" data-bs-slide-to="7"></button>
                             <button type="button" data-bs-target="#buildingCarousel" data-bs-slide-to="8"></button>
+                            <button type="button" data-bs-target="#buildingCarousel" data-bs-slide-to="9"></button>
                         </div>
 
                         <div class="carousel-inner">
                             <div class="carousel-item active">
+                                <video autoplay muted loop playsinline>
+                                    <source src="assetsdevfolio/img/buildwithclaude/claudeai_1767975567_3806377324141486213_57458869031_1.mp4" type="video/mp4">
+                                </video>
+                            </div>
+                            <div class="carousel-item">
                                 <img src="assetsdevfolio/img/buildwithclaude/claudeai_1767975567_3806377399035374627_57458869031_2.jpg" alt="Building with Claude">
                             </div>
                             <div class="carousel-item">
