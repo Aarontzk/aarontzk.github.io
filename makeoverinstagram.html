@@ -84,35 +84,19 @@
             color: #fff !important;
         }
 
-        /* semua section disembunyiin dulu, baru ditampilin pakai js */
-        .page-section {
-            display: none;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-
-        .page-section.visible {
-            display: block;
-            opacity: 1;
-        }
-
-        /* hero section claude (tinggi penuh) */
+        /* hero section penuh layar */
         .hero {
             min-height: 100vh;
         }
 
-        /* hero section about sama news (setengah tinggi) */
-        .hero.short {
-            min-height: 50vh;
-        }
-
         /* foto profil bulat dengan border orange */
         .profile-pic {
-            width: 130px;
-            height: 130px;
+            width: 120px;
+            height: 120px;
             border-radius: 50%;
             object-fit: cover;
             border: 3px solid var(--brand-primary);
+            margin-bottom: 1rem;
         }
 
         /* nama akun di hero */
@@ -121,35 +105,28 @@
             font-weight: 700;
             font-size: 1.8rem;
             color: #fff;
-            margin-top: 1rem;
             margin-bottom: 0.2rem;
         }
 
-        /* judul hero di section about dan news lebih besar */
-        .hero.short h2 {
-            font-size: 2.5rem;
-        }
-
-        /* username @claudeai */
+        /* username @claudeai di bawah nama */
         .hero .username {
             color: var(--brand-gray);
-            font-size: 1rem;
-            margin-bottom: 0.8rem;
+            font-size: 0.95rem;
+            margin-bottom: 0.6rem;
         }
 
         /* teks bio */
         .hero .bio {
-            color: rgba(255, 255, 255, 0.85);
-            font-size: 0.95rem;
-            max-width: 480px;
-            margin: 0 auto 0.8rem;
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 0.9rem;
+            max-width: 460px;
+            margin: 0 auto 0.5rem;
         }
 
-        /* motto miring warna orange */
-        .hero .motto {
+        /* typed animation di bawah bio, warna orange */
+        .hero p .typed {
             color: var(--brand-primary);
             font-style: italic;
-            font-size: 1rem;
         }
 
         /* section grid 6 post */
@@ -173,7 +150,7 @@
             display: block;
         }
 
-        /* overlay gelap + tombol play, muncul waktu hover */
+        /* overlay gelap + ikon play, muncul waktu hover */
         .post-overlay {
             position: absolute;
             inset: 0;
@@ -196,24 +173,24 @@
         }
 
         /* section about berisi 3 paragraf */
-        .about-content {
-            background-color: var(--brand-bg);
+        .about-section {
+            background-color: #f0ede6;
             padding: 60px 0;
         }
 
-        .about-content p {
+        .about-section p {
             font-size: 1.05rem;
             line-height: 1.8;
             color: #333;
             margin-bottom: 1.2rem;
         }
 
-        .about-content a {
+        .about-section a {
             color: var(--brand-primary);
         }
 
-        /* section news berisi embed instagram */
-        .news-content {
+        /* section news berisi 3 embed instagram */
+        .news-section {
             background-color: var(--brand-bg);
             padding: 60px 0;
         }
@@ -277,15 +254,16 @@
     <header id="header" class="header d-flex align-items-center sticky-top">
         <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
 
-            <a href="#" class="logo d-flex align-items-center" onclick="showPage('claude'); return false;">
+            <a href="#hero" class="logo d-flex align-items-center">
                 <h1 class="sitename">claudeai</h1>
             </a>
 
+            <!-- link navbar pakai anchor, scroll ke section masing-masing -->
             <nav id="navmenu" class="navmenu">
                 <ul>
-                    <li><a href="#" id="nav-claude" class="active" onclick="showPage('claude'); return false;">Claude</a></li>
-                    <li><a href="#" id="nav-about" onclick="showPage('about'); return false;">About</a></li>
-                    <li><a href="#" id="nav-news" onclick="showPage('news'); return false;">News</a></li>
+                    <li><a href="#hero" class="active">Claude</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#news">News</a></li>
                 </ul>
                 <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
             </nav>
@@ -295,272 +273,255 @@
 
     <main class="main">
 
-        <!-- ═══════════════════════════════════════════
-             PAGE: CLAUDE
-        ════════════════════════════════════════════ -->
-        <div id="page-claude" class="page-section visible">
+        <!-- ══════════════════════════════════════
+             hero section — profil + typed animation
+        ══════════════════════════════════════ -->
+        <section id="hero" class="hero section dark-background">
 
-            <!-- Hero Section -->
-            <section id="hero" class="hero section dark-background">
+            <img src="assetsdevfolio/img/hero-img.jpg" alt="" data-aos="fade-in">
 
-                <img src="assetsdevfolio/img/hero-img.jpg" alt="" data-aos="fade-in">
+            <div class="container d-flex flex-column align-items-center justify-content-center text-center"
+                data-aos="fade-up" data-aos-delay="100">
 
-                <div class="container d-flex flex-column align-items-center justify-content-center text-center"
-                    data-aos="fade-up" data-aos-delay="100">
-                    <img src="https://instagram.fsub32-2.fna.fbcdn.net/v/t51.82787-19/526842538_17968739306917032_4567973213266962648_n.jpg?stp=dst-jpg_s150x150_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLmRqYW5nby44MDAuYzIifQ&_nc_ht=instagram.fsub32-2.fna.fbcdn.net&_nc_cat=1&_nc_ohc=seNE5IBmB2gQ7kNvwG4AVn9&edm=AA5fTDYBAAAA&ccb=7-5&_nc_sid=7edfe2"
-                        class="profile-pic" alt="Claude by Anthropic">
-                    <h2>Claude by Anthropic</h2>
-                    <p class="username">@claudeai</p>
-                    <p class="bio">The AI for problem solvers. Built by Anthropic to be safe, accurate, and secure.
-                        Talk to Claude on claude.ai or download the app on desktop &amp; mobile.</p>
-                    <p class="motto">"The AI for problem solvers."</p>
+                <!-- foto profil bulat -->
+                <img src="https://instagram.fsub32-2.fna.fbcdn.net/v/t51.82787-19/526842538_17968739306917032_4567973213266962648_n.jpg?stp=dst-jpg_s150x150_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLmRqYW5nby44MDAuYzIifQ&_nc_ht=instagram.fsub32-2.fna.fbcdn.net&_nc_cat=1&_nc_ohc=seNE5IBmB2gQ7kNvwG4AVn9&edm=AA5fTDYBAAAA&ccb=7-5&_nc_sid=7edfe2"
+                    class="profile-pic" alt="Claude by Anthropic">
+
+                <!-- nama dan username -->
+                <h2>Claude by Anthropic</h2>
+                <p class="username">@claudeai</p>
+
+                <!-- bio singkat -->
+                <p class="bio">The AI for problem solvers. Built by Anthropic to be safe, accurate, and secure.
+                    Talk to Claude on claude.ai or download the app on desktop &amp; mobile.</p>
+
+                <!-- typed animation, teks berganti otomatis -->
+                <p><span class="typed"
+                        data-typed-items="The AI for problem solvers., Safe. Accurate. Secure., Built by Anthropic., Try Claude on claude.ai"></span>
+                </p>
+
+            </div>
+
+        </section><!-- /hero section -->
+
+        <!-- ══════════════════════════════════════
+             section posts — grid 6 kartu reel
+        ══════════════════════════════════════ -->
+        <section id="posts" class="posts-section">
+
+            <div class="container section-title" data-aos="fade-up">
+                <h2>Posts</h2>
+            </div>
+
+            <div class="container" data-aos="fade-up" data-aos-delay="100">
+                <div class="row gy-3 gx-3">
+
+                    <!-- tiap kartu klik buka reel di tab baru -->
+                    <div class="col-md-4">
+                        <a href="https://www.instagram.com/reel/DSahaZgji-K/" target="_blank" class="post-card">
+                            <img src="assetsdevfolio/img/posts/post1.png" alt="Post 1">
+                            <div class="post-overlay">
+                                <i class="bi bi-play-circle-fill"></i>
+                            </div>
+                        </a>
+                    </div><!-- End Post Card -->
+
+                    <div class="col-md-4">
+                        <a href="https://www.instagram.com/reel/DV01qzZApxf/" target="_blank" class="post-card">
+                            <img src="assetsdevfolio/img/posts/post2.png" alt="Post 2">
+                            <div class="post-overlay">
+                                <i class="bi bi-play-circle-fill"></i>
+                            </div>
+                        </a>
+                    </div><!-- End Post Card -->
+
+                    <div class="col-md-4">
+                        <a href="https://www.instagram.com/reel/DWrDjznDako/" target="_blank" class="post-card">
+                            <img src="assetsdevfolio/img/posts/post3.png" alt="Post 3">
+                            <div class="post-overlay">
+                                <i class="bi bi-play-circle-fill"></i>
+                            </div>
+                        </a>
+                    </div><!-- End Post Card -->
+
+                    <div class="col-md-4">
+                        <a href="https://www.instagram.com/reel/DTLdHX2k8sx/" target="_blank" class="post-card">
+                            <img src="assetsdevfolio/img/posts/post4.png" alt="Post 4">
+                            <div class="post-overlay">
+                                <i class="bi bi-play-circle-fill"></i>
+                            </div>
+                        </a>
+                    </div><!-- End Post Card -->
+
+                    <div class="col-md-4">
+                        <a href="https://www.instagram.com/reel/DVgqasLjOBh/" target="_blank" class="post-card">
+                            <img src="assetsdevfolio/img/posts/post5.png" alt="Post 5">
+                            <div class="post-overlay">
+                                <i class="bi bi-play-circle-fill"></i>
+                            </div>
+                        </a>
+                    </div><!-- End Post Card -->
+
+                    <div class="col-md-4">
+                        <a href="https://www.instagram.com/reel/DUJWjSrAb4L/" target="_blank" class="post-card">
+                            <img src="assetsdevfolio/img/posts/post6.png" alt="Post 6">
+                            <div class="post-overlay">
+                                <i class="bi bi-play-circle-fill"></i>
+                            </div>
+                        </a>
+                    </div><!-- End Post Card -->
+
                 </div>
+            </div>
 
-            </section><!-- /Hero Section -->
+        </section><!-- /section posts -->
 
-            <!-- Posts Section -->
-            <section class="posts-section">
+        <!-- ══════════════════════════════════════
+             section about — 3 paragraf tentang claude
+        ══════════════════════════════════════ -->
+        <section id="about" class="about-section">
 
-                <div class="container section-title" data-aos="fade-up">
-                    <h2>Posts</h2>
-                </div>
+            <div class="container section-title" data-aos="fade-up">
+                <h2>About Claude</h2>
+            </div>
 
-                <div class="container" data-aos="fade-up" data-aos-delay="100">
-                    <div class="row gy-3 gx-3">
+            <div class="container" data-aos="fade-up" data-aos-delay="100">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
 
-                        <div class="col-md-4">
-                            <a href="https://www.instagram.com/reel/DSahaZgji-K/" target="_blank" class="post-card">
-                                <img src="assetsdevfolio/img/posts/post1.png" alt="Post 1">
-                                <div class="post-overlay">
-                                    <i class="bi bi-play-circle-fill"></i>
-                                </div>
-                            </a>
-                        </div><!-- End Post Card -->
+                        <!-- REPLACE: customize paragraphs as needed -->
+                        <p>
+                            Claude is an AI assistant built by Anthropic, designed from the ground up to be safe,
+                            accurate, and genuinely useful. Whether you're working through a complex problem,
+                            drafting something creative, or just looking for a thoughtful conversation partner,
+                            Claude is built to help — without shortcuts on honesty or safety.
+                        </p>
 
-                        <div class="col-md-4">
-                            <a href="https://www.instagram.com/reel/DV01qzZApxf/" target="_blank" class="post-card">
-                                <img src="assetsdevfolio/img/posts/post2.png" alt="Post 2">
-                                <div class="post-overlay">
-                                    <i class="bi bi-play-circle-fill"></i>
-                                </div>
-                            </a>
-                        </div><!-- End Post Card -->
+                        <p>
+                            Anthropic is an AI safety company founded with the belief that the most transformative
+                            and potentially dangerous technology in human history deserves to be built carefully.
+                            The team focuses on alignment research and responsible deployment, so that as AI
+                            becomes more powerful, it remains beneficial to everyone.
+                        </p>
 
-                        <div class="col-md-4">
-                            <a href="https://www.instagram.com/reel/DWrDjznDako/" target="_blank" class="post-card">
-                                <img src="assetsdevfolio/img/posts/post3.png" alt="Post 3">
-                                <div class="post-overlay">
-                                    <i class="bi bi-play-circle-fill"></i>
-                                </div>
-                            </a>
-                        </div><!-- End Post Card -->
-
-                        <div class="col-md-4">
-                            <a href="https://www.instagram.com/reel/DTLdHX2k8sx/" target="_blank" class="post-card">
-                                <img src="assetsdevfolio/img/posts/post4.png" alt="Post 4">
-                                <div class="post-overlay">
-                                    <i class="bi bi-play-circle-fill"></i>
-                                </div>
-                            </a>
-                        </div><!-- End Post Card -->
-
-                        <div class="col-md-4">
-                            <a href="https://www.instagram.com/reel/DVgqasLjOBh/" target="_blank" class="post-card">
-                                <img src="assetsdevfolio/img/posts/post5.png" alt="Post 5">
-                                <div class="post-overlay">
-                                    <i class="bi bi-play-circle-fill"></i>
-                                </div>
-                            </a>
-                        </div><!-- End Post Card -->
-
-                        <div class="col-md-4">
-                            <a href="https://www.instagram.com/reel/DUJWjSrAb4L/" target="_blank" class="post-card">
-                                <img src="assetsdevfolio/img/posts/post6.png" alt="Post 6">
-                                <div class="post-overlay">
-                                    <i class="bi bi-play-circle-fill"></i>
-                                </div>
-                            </a>
-                        </div><!-- End Post Card -->
+                        <p>
+                            You can talk to Claude directly at
+                            <a href="https://claude.ai" target="_blank">claude.ai</a>, or download the app on
+                            desktop and mobile. Follow
+                            <a href="https://www.instagram.com/claudeai/" target="_blank">@claudeai</a> on
+                            Instagram to see how Claude is being used by problem solvers around the world every day.
+                        </p>
 
                     </div>
                 </div>
+            </div>
 
-            </section><!-- /Posts Section -->
+        </section><!-- /section about -->
 
-        </div><!-- /page-claude -->
+        <!-- ══════════════════════════════════════
+             section news — 3 embed instagram
+        ══════════════════════════════════════ -->
+        <section id="news" class="news-section">
 
+            <div class="container section-title" data-aos="fade-up">
+                <h2>Latest from @claudeai</h2>
+            </div>
 
-        <!-- ═══════════════════════════════════════════
-             PAGE: ABOUT
-        ════════════════════════════════════════════ -->
-        <div id="page-about" class="page-section">
+            <div class="container" data-aos="fade-up" data-aos-delay="100">
+                <div class="row gy-4">
 
-            <!-- Hero Section -->
-            <section class="hero short section dark-background">
+                    <!-- embed 1 -->
+                    <div class="col-12 col-md-4 d-flex justify-content-center">
+                        <blockquote class="instagram-media" data-instgrm-captioned
+                            data-instgrm-permalink="https://www.instagram.com/p/DWCLOMrkbTF/?utm_source=ig_embed&utm_campaign=loading"
+                            data-instgrm-version="14"
+                            style="background:#FFF;border:0;border-radius:3px;box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15);margin:1px;max-width:540px;min-width:326px;padding:0;width:99.375%;">
+                            <div style="padding:16px;"><a
+                                    href="https://www.instagram.com/p/DWCLOMrkbTF/?utm_source=ig_embed&utm_campaign=loading"
+                                    style="background:#FFFFFF;line-height:0;padding:0;text-align:center;text-decoration:none;width:100%;"
+                                    target="_blank">View this post on Instagram</a>
+                            </div>
+                        </blockquote>
+                    </div><!-- End Embed 1 -->
 
-                <img src="assetsdevfolio/img/hero-img.jpg" alt="" data-aos="fade-in">
+                    <!-- embed 2 -->
+                    <div class="col-12 col-md-4 d-flex justify-content-center">
+                        <blockquote class="instagram-media" data-instgrm-captioned
+                            data-instgrm-permalink="https://www.instagram.com/p/DW1vj51FJL0/?utm_source=ig_embed&utm_campaign=loading"
+                            data-instgrm-version="14"
+                            style="background:#FFF;border:0;border-radius:3px;box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15);margin:1px;max-width:540px;min-width:326px;padding:0;width:99.375%;">
+                            <div style="padding:16px;"><a
+                                    href="https://www.instagram.com/p/DW1vj51FJL0/?utm_source=ig_embed&utm_campaign=loading"
+                                    style="background:#FFFFFF;line-height:0;padding:0;text-align:center;text-decoration:none;width:100%;"
+                                    target="_blank">View this post on Instagram</a>
+                            </div>
+                        </blockquote>
+                    </div><!-- End Embed 2 -->
 
-                <div class="container d-flex flex-column align-items-center justify-content-center text-center"
-                    data-aos="fade-up" data-aos-delay="100">
-                    <h2>About Claude</h2>
-                </div>
-
-            </section><!-- /Hero Section -->
-
-            <!-- About Content -->
-            <section class="about-content">
-
-                <div class="container" data-aos="fade-up" data-aos-delay="100">
-                    <div class="row justify-content-center">
-                        <div class="col-lg-8">
-
-                            <!-- REPLACE: customize paragraphs as needed -->
-                            <p>
-                                Claude is an AI assistant built by Anthropic, designed from the ground up to be safe,
-                                accurate, and genuinely useful. Whether you're working through a complex problem,
-                                drafting something creative, or just looking for a thoughtful conversation partner,
-                                Claude is built to help — without shortcuts on honesty or safety.
-                            </p>
-
-                            <p>
-                                Anthropic is an AI safety company founded with the belief that the most transformative
-                                and potentially dangerous technology in human history deserves to be built carefully.
-                                The team focuses on alignment research and responsible deployment, so that as AI
-                                becomes more powerful, it remains beneficial to everyone.
-                            </p>
-
-                            <p>
-                                You can talk to Claude directly at
-                                <a href="https://claude.ai" target="_blank">claude.ai</a>, or download the app on
-                                desktop and mobile. Follow
-                                <a href="https://www.instagram.com/claudeai/" target="_blank">@claudeai</a> on
-                                Instagram to see how Claude is being used by problem solvers around the world every day.
-                            </p>
-
-                        </div>
-                    </div>
-                </div>
-
-            </section><!-- /About Content -->
-
-        </div><!-- /page-about -->
-
-
-        <!-- ═══════════════════════════════════════════
-             PAGE: NEWS
-        ════════════════════════════════════════════ -->
-        <div id="page-news" class="page-section">
-
-            <!-- Hero Section -->
-            <section class="hero short section dark-background">
-
-                <img src="assetsdevfolio/img/hero-img.jpg" alt="" data-aos="fade-in">
-
-                <div class="container d-flex flex-column align-items-center justify-content-center text-center"
-                    data-aos="fade-up" data-aos-delay="100">
-                    <h2>Latest from @claudeai</h2>
-                </div>
-
-            </section><!-- /Hero Section -->
-
-            <!-- Embeds Section -->
-            <section class="news-content">
-
-                <div class="container section-title" data-aos="fade-up">
-                    <h2>Latest Posts</h2>
-                </div>
-
-                <div class="container" data-aos="fade-up" data-aos-delay="100">
-                    <div class="row gy-4">
-
-                        <div class="col-12 col-md-4 d-flex justify-content-center">
-                            <blockquote class="instagram-media" data-instgrm-captioned
-                                data-instgrm-permalink="https://www.instagram.com/p/DWCLOMrkbTF/?utm_source=ig_embed&utm_campaign=loading"
-                                data-instgrm-version="14"
-                                style="background:#FFF;border:0;border-radius:3px;box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15);margin:1px;max-width:540px;min-width:326px;padding:0;width:99.375%;">
-                                <div style="padding:16px;"><a
-                                        href="https://www.instagram.com/p/DWCLOMrkbTF/?utm_source=ig_embed&utm_campaign=loading"
-                                        style="background:#FFFFFF;line-height:0;padding:0;text-align:center;text-decoration:none;width:100%;"
-                                        target="_blank">View this post on Instagram</a>
-                                </div>
-                            </blockquote>
-                        </div><!-- End Embed 1 -->
-
-                        <div class="col-12 col-md-4 d-flex justify-content-center">
-                            <blockquote class="instagram-media" data-instgrm-captioned
-                                data-instgrm-permalink="https://www.instagram.com/p/DW1vj51FJL0/?utm_source=ig_embed&utm_campaign=loading"
-                                data-instgrm-version="14"
-                                style="background:#FFF;border:0;border-radius:3px;box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15);margin:1px;max-width:540px;min-width:326px;padding:0;width:99.375%;">
-                                <div style="padding:16px;"><a
-                                        href="https://www.instagram.com/p/DW1vj51FJL0/?utm_source=ig_embed&utm_campaign=loading"
-                                        style="background:#FFFFFF;line-height:0;padding:0;text-align:center;text-decoration:none;width:100%;"
-                                        target="_blank">View this post on Instagram</a>
-                                </div>
-                            </blockquote>
-                        </div><!-- End Embed 2 -->
-
-                        <div class="col-12 col-md-4 d-flex justify-content-center">
-                            <blockquote class="instagram-media" data-instgrm-captioned
-                                data-instgrm-permalink="https://www.instagram.com/p/DVPbAgeiRAG/?utm_source=ig_embed&utm_campaign=loading"
-                                data-instgrm-version="14"
-                                style="background:#FFF;border:0;border-radius:3px;box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15);margin:1px;max-width:540px;min-width:326px;padding:0;width:99.375%;">
-                                <div style="padding:16px;"><a
-                                        href="https://www.instagram.com/p/DVPbAgeiRAG/?utm_source=ig_embed&utm_campaign=loading"
-                                        style="background:#FFFFFF;line-height:0;padding:0;text-align:center;text-decoration:none;width:100%;"
-                                        target="_blank">View this post on Instagram</a>
-                                </div>
-                            </blockquote>
-                        </div><!-- End Embed 3 -->
-
-                    </div>
-                </div>
-
-            </section><!-- /Embeds Section -->
-
-            <!-- Comments Section -->
-            <section class="comments-section">
-
-                <div class="container section-title" data-aos="fade-up">
-                    <h2>What people are saying</h2>
-                </div>
-
-                <div class="container" data-aos="fade-up" data-aos-delay="100">
-
-                    <div class="comment-card">
-                        <p class="comment-username">@auxer.ai</p>
-                        <p class="comment-text">🔥🔥🔥</p>
-                    </div><!-- End Comment -->
-
-                    <div class="comment-card">
-                        <p class="comment-username">@aahnagarg_</p>
-                        <p class="comment-text">would love to use that but oh wait my limit reached after one prompt</p>
-                    </div><!-- End Comment -->
-
-                    <div class="comment-card">
-                        <p class="comment-username">@draeboothe</p>
-                        <p class="comment-text">Sure it did</p>
-                    </div><!-- End Comment -->
-
-                    <div class="comment-card">
-                        <p class="comment-username">@dev1lm4n</p>
-                        <!-- REPLACE: no text available, use placeholder -->
-                        <p class="comment-text">...</p>
-                    </div><!-- End Comment -->
-
-                    <div class="comment-card">
-                        <p class="comment-username">@chirag99artani</p>
-                        <!-- REPLACE: actual comment text -->
-                        <p class="comment-text">...</p>
-                    </div><!-- End Comment -->
+                    <!-- embed 3 -->
+                    <div class="col-12 col-md-4 d-flex justify-content-center">
+                        <blockquote class="instagram-media" data-instgrm-captioned
+                            data-instgrm-permalink="https://www.instagram.com/p/DVPbAgeiRAG/?utm_source=ig_embed&utm_campaign=loading"
+                            data-instgrm-version="14"
+                            style="background:#FFF;border:0;border-radius:3px;box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15);margin:1px;max-width:540px;min-width:326px;padding:0;width:99.375%;">
+                            <div style="padding:16px;"><a
+                                    href="https://www.instagram.com/p/DVPbAgeiRAG/?utm_source=ig_embed&utm_campaign=loading"
+                                    style="background:#FFFFFF;line-height:0;padding:0;text-align:center;text-decoration:none;width:100%;"
+                                    target="_blank">View this post on Instagram</a>
+                            </div>
+                        </blockquote>
+                    </div><!-- End Embed 3 -->
 
                 </div>
+            </div>
 
-            </section><!-- /Comments Section -->
+        </section><!-- /section news -->
 
-        </div><!-- /page-news -->
+        <!-- ══════════════════════════════════════
+             section komentar — di bawah embed
+        ══════════════════════════════════════ -->
+        <section class="comments-section">
+
+            <div class="container section-title" data-aos="fade-up">
+                <h2>What people are saying</h2>
+            </div>
+
+            <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+                <div class="comment-card">
+                    <p class="comment-username">@auxer.ai</p>
+                    <p class="comment-text">🔥🔥🔥</p>
+                </div><!-- End Comment -->
+
+                <div class="comment-card">
+                    <p class="comment-username">@aahnagarg_</p>
+                    <p class="comment-text">would love to use that but oh wait my limit reached after one prompt</p>
+                </div><!-- End Comment -->
+
+                <div class="comment-card">
+                    <p class="comment-username">@draeboothe</p>
+                    <p class="comment-text">Sure it did</p>
+                </div><!-- End Comment -->
+
+                <div class="comment-card">
+                    <p class="comment-username">@dev1lm4n</p>
+                    <!-- REPLACE: no text available, use placeholder -->
+                    <p class="comment-text">...</p>
+                </div><!-- End Comment -->
+
+                <div class="comment-card">
+                    <p class="comment-username">@chirag99artani</p>
+                    <!-- REPLACE: actual comment text -->
+                    <p class="comment-text">...</p>
+                </div><!-- End Comment -->
+
+            </div>
+
+        </section><!-- /section komentar -->
 
     </main>
 
+    <!-- footer gelap di bagian paling bawah -->
     <footer id="footer" class="footer">
         <div class="container">
             <p>Follow us on Instagram</p>
@@ -591,46 +552,8 @@
     <!-- Main JS File -->
     <script src="assetsdevfolio/js/main.js"></script>
 
-    <!-- Instagram Embed (loaded once, re-processed on section switch) -->
+    <!-- embed instagram, load 1x di akhir -->
     <script async src="//www.instagram.com/embed.js"></script>
-
-    <script>
-        function showPage(name) {
-            // sembunyiin semua section dulu
-            document.querySelectorAll('.page-section').forEach(function (el) {
-                el.classList.remove('visible');
-            });
-
-            // hapus class active dari semua link navbar
-            document.querySelectorAll('#navmenu a').forEach(function (a) {
-                a.classList.remove('active');
-            });
-
-            // tampilin section yang dipilih, pakai efek fade
-            var target = document.getElementById('page-' + name);
-            if (target) {
-                target.style.opacity = '0';
-                target.classList.add('visible');
-                requestAnimationFrame(function () {
-                    requestAnimationFrame(function () {
-                        target.style.opacity = '1';
-                    });
-                });
-            }
-
-            // kasih active ke link navbar yang sesuai
-            var navLink = document.getElementById('nav-' + name);
-            if (navLink) navLink.classList.add('active');
-
-            // scroll ke atas pas pindah halaman
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-
-            // kalau buka section news, proses ulang embed instagram
-            if (name === 'news' && window.instgrm) {
-                window.instgrm.Embeds.process();
-            }
-        }
-    </script>
 
 </body>
 
