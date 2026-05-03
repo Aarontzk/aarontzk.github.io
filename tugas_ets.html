@@ -1,0 +1,895 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Wuthering Waves</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+
+  <!-- favicons -->
+  <link href="assets/img/charwuwalogo.png" rel="icon">
+  <link href="assets/img/charwuwalogo.png" rel="apple-touch-icon">
+
+  <!-- fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- vendor css files -->
+  <!-- bootstrap.min.css: css utama bootstrap (grid, komponen, utilitas) -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <!-- bootstrap-icons.css: library ikon bootstrap (bi bi-*) -->
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <!-- aos.css: animasi scroll (fade-up, fade-in, dll) -->
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <!-- glightbox.min.css: lightbox popup untuk gambar/video -->
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <!-- swiper-bundle.min.css: slider/carousel swiper (dimuat tapi pakai bootstrap carousel) -->
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- main css file -->
+  <link href="assets/css/main.css" rel="stylesheet">
+  <style>
+    .hero {
+      position: relative;
+      overflow: hidden;
+      background: none !important;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .hero video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 0;
+    }
+
+    .hero .container {
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero .btn-getstarted,
+    .hero .btn-getstarted:focus {
+      color: var(--contrast-color);
+      background: var(--accent-color);
+      font-size: 14px;
+      padding: 8px 25px;
+      margin: 0;
+      border-radius: 5%;
+      transition: 0.3s;
+      text-decoration: none;
+      box-shadow: 0px 0px 12px rgba(255, 200, 50, 0.7);
+    }
+
+    .hero .btn-getstarted:hover {
+      background: color-mix(in srgb, var(--accent-color), transparent 15%);
+    }
+
+    .isotope-container .portfolio-item {
+      padding-bottom: 24px;
+    }
+
+    body {
+      font-family: 'LaguSansSerif', sans-serif;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    .sitename,
+    .btn-getstarted,
+    .navmenu a {
+      font-family: 'LaguSansSerif', sans-serif;
+      letter-spacing: 0.05em;
+    }
+
+    @font-face {
+      font-family: 'LaguSansSerif';
+      src: url('assets/fonts/LaguSansSerif.ttf') format('truetype');
+      font-weight: normal;
+      font-style: normal;
+    }
+  </style>
+</head>
+
+<body class="index-page">
+
+  <!-- ===================== header / navbar ===================== -->
+  <!-- header: fixed-top = navbar selalu nempel di atas layar saat scroll -->
+  <!-- d-flex align-items-center = flexbox, logo & nav sejajar tengah vertikal -->
+  <header id="header" class="header d-flex align-items-center fixed-top">
+
+    <!-- container-fluid: lebar penuh layar -->
+    <!-- container-xl: batas maksimal lebar di layar xl ke atas -->
+    <!-- position-relative: supaya child bisa pakai position absolute -->
+    <!-- d-flex align-items-center: isi header sejajar tengah secara vertikal -->
+    <div class="container-fluid container-xl position-relative d-flex align-items-center">
+
+      <!-- logo: d-flex align-items-center = gambar logo sejajar tengah -->
+      <!-- me-auto = margin-end auto mendorong navmenu ke kanan -->
+      <a href="makeoverwuwa.html" class="logo d-flex align-items-center me-auto">
+        <div><img src="assets/img/wuwalogo.png" alt="Wuwa Logo"></div>
+      </a>
+
+      <!-- navmenu: navigasi utama desktop -->
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <!-- setiap li adalah item menu, href mengarah ke section id di halaman -->
+          <li><a href="#hero" class="active">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#why-us">Why Us</a></li>
+          <li><a href="#portfolio">Events</a></li>
+          <li><a href="#characters">Characters</a></li>
+          <li><a href="#testimonials">Testimonials</a></li>
+          <li><a href="#recent-collabs">Collaboration</a></li>
+        </ul>
+        <!-- hamburger menu mobile: d-xl-none = tampil hanya di bawah xl (mobile/tablet) -->
+        <!-- bi bi-list = ikon bootstrap tiga garis (hamburger) -->
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+
+      <!-- tombol cta "get started" di kanan navbar -->
+      <a class="btn-getstarted" href="#about">Get Started</a>
+
+    </div>
+  </header>
+  <!-- ===================== /header / navbar ===================== -->
+
+  <main class="main">
+
+    <!-- ===================== hero section ===================== -->
+    <!-- section#hero: layar penuh dengan video background -->
+    <section id="hero" class="hero section">
+      <!-- video autoplay loop muted: video latar otomatis putar, ulang, tanpa suara -->
+      <!-- playsinline: video tidak fullscreen di ios -->
+      <video autoplay loop muted playsinline>
+        <source src="assets/video/hero-bg.mp4" type="video/mp4">
+      </video>
+
+      <!-- container: membatasi lebar konten di tengah layar -->
+      <div class="container">
+        <!-- d-flex flex-column: susun elemen vertikal (logo di atas, tombol di bawah) -->
+        <!-- align-items-center: tengahkan secara horizontal -->
+        <div class="d-flex flex-column align-items-center">
+          <img src="assets/img/wuwalogo.png" alt="Wuwa Logo">
+          <!-- mt-3: margin-top 3 (jarak antara logo dan tombol) -->
+          <a class="btn-getstarted mt-3" onclick="tapOnDownload()">Download Now</a>
+        </div>
+      </div>
+    </section><!-- /hero section -->
+    <!-- ===================== /hero section ===================== -->
+
+    <!-- ===================== about section ===================== -->
+    <!-- dark-background: class custom untuk background gelap -->
+    <section id="about" class="about section dark-background">
+
+      <!-- section-title: judul section, data-aos="fade-up" = animasi muncul dari bawah -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>About</h2>
+        <img src="assets/img/hdwuwalogo.png" alt="Wuwa Logo" width="25%">
+      </div>
+
+      <div class="container">
+
+        <!-- row: baris grid bootstrap -->
+        <!-- gy-4: gap vertikal antar kolom ukuran 4 (saat mobile kolom menumpuk) -->
+        <div class="row gy-4">
+
+          <!-- kolom kiri about: col-lg-6 = 6/12 (setengah layar) di layar lg ke atas -->
+          <!-- data-aos-delay="100": animasi mulai 100ms setelah trigger -->
+          <div class="col-lg-6 content" data-aos="fade-up" data-aos-delay="100">
+            <p>
+              Wuthering Waves is an open-world action RPG developed by Kuro Games. Set on the post-apocalyptic world of
+              Solaris-3, you play as the Rover — an amnesiac wanderer awakened after the catastrophic Cataclysm.
+            </p>
+            <!-- ul: daftar fitur game dengan ikon bootstrap bi-check2-circle -->
+            <ul>
+              <li><i class="bi bi-check2-circle"></i> <span>Vast open world with seamless exploration across
+                  Solaris-3.</span></li>
+              <li><i class="bi bi-check2-circle"></i> <span>Deep skill-based combat with Resonators and Echo
+                  abilities.</span></li>
+              <li><i class="bi bi-check2-circle"></i> <span>Available on PC, iOS, and Android — free to play.</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- kolom kanan about: col-lg-6 = setengah layar di lg ke atas -->
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
+            <p>In a world still recovering from the Cataclysm, Resonators wield the power of sound to fight back the
+              Tacet Discord. Uncover lost memories, forge bonds with iconic characters, and explore a living world
+              filled with secrets, lore, and breathtaking landscapes.</p>
+            <!-- read-more: link "official site" dengan ikon panah kanan bi-arrow-right -->
+            <a href="https://wutheringwaves.kurogames.com" class="read-more" target="_blank"><span>Official
+                Site</span><i class="bi bi-arrow-right"></i></a>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section><!-- /about section -->
+    <!-- ===================== /about section ===================== -->
+
+    <!-- ===================== why us section ===================== -->
+    <!-- light-background: class custom background terang -->
+    <!-- data-builder="section": penanda section untuk builder tool -->
+    <section id="why-us" class="section why-us light-background" data-builder="section">
+      <!-- gambar background section (bukan bootstrap, css custom) -->
+      <img class="bg" src="assets/img/why-us-bg.png" alt="">
+
+      <!-- container-fluid: lebar penuh tanpa batas maksimal -->
+      <div class="container-fluid">
+
+        <!-- row gy-4: baris grid dengan gap vertikal -->
+        <div class="row gy-4">
+
+          <!-- kolom kiri (konten teks + faq): 7/12 lebar di lg ke atas -->
+          <!-- d-flex flex-column: susun konten vertikal -->
+          <!-- justify-content-center: tengahkan konten secara vertikal -->
+          <!-- order-2 order-lg-1: di mobile urutan ke-2, di lg ke-1 (swap kolom) -->
+          <div class="col-lg-7 d-flex flex-column justify-content-center order-2 order-lg-1">
+            <!-- video intro section why us -->
+            <video src="https://wutheringwaves.kurogames.com/static4.0/assets/end-en-eb5ab687.mp4" autoplay loop muted
+              class="h3-video"></video>
+            <p>
+            <!-- px-xl-5: padding horizontal 5 di layar xl ke atas -->
+            <div class="content px-xl-5" data-aos="fade-up" data-aos-delay="100">
+              <h1 style="color: white;">
+                Where is everyone going? Never mind—let's get started.
+              </h1>
+            </div>
+
+            <!-- faq-container: wrapper accordion faq -->
+            <div class="faq-container px-xl-5" data-aos="fade-up" data-aos-delay="200">
+
+              <!-- faq item 1: world exploration (default terbuka: class faq-active) -->
+              <div class="faq-item faq-active">
+                <h3><span>01</span> A World That Breathes — Explore Without Limits</h3>
+                <div class="faq-content">
+                  <p>Solaris-3 is alive. From the frozen peaks of Mt. Firmament to the neon-lit ruins of Jinzhou, every
+                    corner of this world holds secrets waiting to be uncovered. Glide, climb, and dive into an open
+                    world built for true exploration.</p>
+                </div>
+                <!-- bi-chevron-right: ikon panah kanan untuk toggle buka/tutup faq -->
+                <i class="faq-toggle bi bi-chevron-right"></i>
+              </div><!-- end faq item 1 -->
+
+              <!-- faq item 2: combat system -->
+              <div class="faq-item">
+                <h3><span>02</span> Combat That Rewards Mastery</h3>
+                <div class="faq-content">
+                  <p>Every Resonator fights differently. Chain parries, dodge counters, and Resonance Chains to unleash
+                    devastating combos. Whether you play aggressive or calculated, the battlefield bends to your skill —
+                    not just your stats.</p>
+                </div>
+                <i class="faq-toggle bi bi-chevron-right"></i>
+              </div><!-- end faq item 2 -->
+
+              <!-- faq item 3: story / lore -->
+              <div class="faq-item">
+                <h3><span>03</span> Stories Carved by the Tide of Calamity</h3>
+                <div class="faq-content">
+                  <p>You are the Rover — a wanderer who survived the Cataclysm with no memory and an unknown power.
+                    Piece together the truth of a fractured world, forge bonds with Resonators, and decide the fate of
+                    Solaris-3 one echo at a time.</p>
+                </div>
+                <i class="faq-toggle bi bi-chevron-right"></i>
+              </div><!-- end faq item 3 -->
+
+            </div>
+
+          </div>
+
+          <!-- kolom kanan (gambar): 5/12 lebar di lg ke atas -->
+          <!-- order-1 order-lg-2: di mobile urutan ke-1 (gambar di atas), di lg ke-2 -->
+          <div class="col-lg-5 order-1 order-lg-2 why-us-img">
+            <!-- img-fluid: gambar responsif, lebar menyesuaikan kolom -->
+            <!-- data-aos="fade": animasi fade sederhana (tanpa arah) -->
+            <img src="assets/img/why-us.png" class="img-fluid" data-aos="fade" data-aos-delay="300" alt="">
+          </div>
+        </div>
+
+      </div>
+
+    </section><!-- /why us section -->
+    <!-- ===================== /why us section ===================== -->
+
+    <!-- ===================== portfolio / events section ===================== -->
+    <!-- dark-background: section latar gelap -->
+    <section id="portfolio" class="portfolio section dark-background">
+
+      <!-- section-title: judul section what's new -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>What's New</h2>
+        <p>Wuthering Waves Version 3.3 Official Trailer | Reverbs From the End of Galaxies</p>
+      </div>
+
+      <div class="container">
+
+        <!-- isotope-layout: grid yang bisa difilter pakai plugin isotope -->
+        <!-- data-default-filter="*": default tampilkan semua item -->
+        <!-- data-layout="fitRows": susun item per baris (bukan masonry) -->
+        <div class="isotope-layout" data-default-filter="*" data-layout="fitRows" data-sort="original-order">
+
+          <!-- video featured: video utama full width di atas grid -->
+          <!-- col-12: lebar penuh (12/12 kolom) -->
+          <div class="row mb-4">
+            <div class="col-12">
+              <!-- w-100: width 100% (full width container) -->
+              <video src="assets/img/portfolio/portfolio-9.mp4" class="img-fluid w-100" autoplay loop muted playsinline
+                style="border-radius: 2.5%;"></video>
+            </div>
+          </div>
+
+          <!-- tombol filter isotope: klik untuk menampilkan kategori tertentu -->
+          <!-- filter-active: filter yang aktif (default: all) -->
+          <ul class="portfolio-filters isotope-filters" data-aos="fade-up" data-aos-delay="100">
+            <li data-filter="*" class="filter-active">All</li>
+            <li data-filter=".filter-characters">Characters</li>
+            <li data-filter=".filter-Events">Events</li>
+            <li data-filter=".filter-trailers">Trailers</li>
+          </ul>
+
+          <!-- isotope-container: wrapper semua item grid isotope -->
+          <!-- col-lg-4 col-md-6: 3 kolom di lg, 2 kolom di md, 1 kolom di mobile -->
+          <div class="row isotope-container" data-aos="fade-up" data-aos-delay="200" style="gap: 0;">
+
+            <!-- event 1: university of washington (sigrika) -->
+            <!-- filter-events: kategori events, ditampilkan saat filter "events" aktif -->
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-Events">
+              <img src="assets/img/portfolio/portfolio-4.jpg" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4>University of Washington</h4>
+                <p>Official Events</p>
+                <!-- glightbox preview-link: klik buka gambar fullscreen (lightbox) -->
+                <!-- data-gallery: mengelompokkan gambar dalam satu galeri lightbox -->
+                <a href="assets/img/portfolio/portfolio-4.jpg" title="Sigrika" data-gallery="portfolio-gallery-Events"
+                  class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+              </div>
+            </div>
+
+            <!-- event 2: florida international university (hiyuki) -->
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-Events">
+              <img src="assets/img/portfolio/portfolio-1.jpg" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4>Florida International University</h4>
+                <p>Official Events</p>
+                <a href="assets/img/portfolio/portfolio-1.jpg" title="Hiyuki" data-gallery="portfolio-gallery-Events"
+                  class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+              </div>
+            </div>
+
+            <!-- event 3: university of washington (denia) -->
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-Events">
+              <img src="assets/img/portfolio/portfolio-3.png" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4>University of Washington</h4>
+                <p>Official Events</p>
+                <a href="assets/img/portfolio/portfolio-3.png" title="Denia" data-gallery="portfolio-gallery-Events"
+                  class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+              </div>
+            </div>
+
+            <!-- trailer 1: hiyuki character trailer -->
+            <!-- filter-trailers: kategori trailers -->
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-trailers">
+              <video src="assets/img/portfolio/portfolio-7.mp4" class="img-fluid" autoplay loop muted
+                playsinline></video>
+              <div class="portfolio-info">
+                <h4>Hiyuki</h4>
+                <p>Official Trailer</p>
+              </div>
+            </div>
+
+            <!-- trailer 2: denia character trailer -->
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-trailers">
+              <video src="assets/img/portfolio/portfolio-8.mp4" class="img-fluid" autoplay loop muted
+                playsinline></video>
+              <div class="portfolio-info">
+                <h4>Denia</h4>
+                <p>Official Trailer</p>
+              </div>
+            </div>
+
+            <!-- trailer 3: sigrika character trailer -->
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-trailers">
+              <video src="assets/img/portfolio/portfolio-10.mp4" class="img-fluid" autoplay loop muted
+                playsinline></video>
+              <div class="portfolio-info">
+                <h4>Sigrika</h4>
+                <p>Official Trailer</p>
+              </div>
+            </div>
+
+            <!-- character reveal 1: resonator portrait -->
+            <!-- filter-characters: kategori characters -->
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-characters">
+              <img src="assets/img/portfolio/portfolio-portrait-1.jpg" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4>Resonator</h4>
+                <p>Character Reveal</p>
+                <a href="assets/img/portfolio/portfolio-portrait-1.jpg" title="Resonator"
+                  data-gallery="portfolio-gallery-characters" class="glightbox preview-link"><i
+                    class="bi bi-zoom-in"></i></a>
+              </div>
+            </div>
+
+            <!-- character reveal 2: resonator portrait -->
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-characters">
+              <img src="assets/img/portfolio/portfolio-portrait-2.jpg" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4>Resonator</h4>
+                <p>Character Reveal</p>
+                <a href="assets/img/portfolio/portfolio-portrait-2.jpg" title="Resonator"
+                  data-gallery="portfolio-gallery-characters" class="glightbox preview-link"><i
+                    class="bi bi-zoom-in"></i></a>
+              </div>
+            </div>
+
+            <!-- character reveal 3: resonator portrait -->
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-characters">
+              <img src="assets/img/portfolio/portfolio-portrait-3.jpg" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4>Resonator</h4>
+                <p>Character Reveal</p>
+                <a href="assets/img/portfolio/portfolio-portrait-3.jpg" title="Resonator"
+                  data-gallery="portfolio-gallery-characters" class="glightbox preview-link"><i
+                    class="bi bi-zoom-in"></i></a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+    </section><!-- /portfolio section -->
+    <!-- ===================== /portfolio / events section ===================== -->
+
+    <!-- ===================== characters section ===================== -->
+    <!-- light-background: section latar terang -->
+    <section id="characters" class="characters section light-background">
+
+      <!-- section-title: judul section characters -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Characters</h2>
+        <p>Resonators of Solaris-3 — each carrying their own story, power, and purpose.</p>
+      </div>
+
+      <div class="container">
+
+        <!-- row gy-4: baris grid, gap vertikal 4 antar karakter saat mobile -->
+        <div class="row gy-4">
+
+          <!-- char 1: rover -->
+          <!-- col-lg-6: 2 karakter per baris di layar lg, 1 per baris di mobile -->
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+            <!-- characters-member: wrapper satu kartu karakter -->
+            <!-- d-flex align-items-start: foto dan teks sejajar, rata atas -->
+            <div class="characters-member d-flex align-items-start">
+              <!-- pic: wrapper foto karakter -->
+              <div class="pic"><img src="assets/img/characters/mrover.jpg" class="img-fluid" alt=""></div>
+              <!-- member-info: nama, element, deskripsi karakter -->
+              <div class="member-info">
+                <h4>Rover</h4>
+                <span>Protagonist · Spectro / Havoc</span>
+                <p>A wanderer who survived the Cataclysm. No memory, unknown power — yet the fate of Solaris-3 rests on
+                  their shoulders.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- char 2: denia -->
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="characters-member d-flex align-items-start">
+              <div class="pic"><img src="assets/img/characters/denia.jpg" class="img-fluid" alt=""></div>
+              <div class="member-info">
+                <h4>Denia</h4>
+                <span>5★ Resonator · Glacio</span>
+                <p>A wanderer of the frozen north, Denia wields ice with quiet precision. Calm under pressure, her
+                  resolve never wavers even at the edge of the storm.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- char 3: hiyuki -->
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="300">
+            <div class="characters-member d-flex align-items-start">
+              <div class="pic"><img src="assets/img/characters/hiyuki.jpg" class="img-fluid" alt=""></div>
+              <div class="member-info">
+                <h4>Hiyuki</h4>
+                <span>5★ Resonator · Spectro</span>
+                <p>Silent as snowfall, sharp as light. Hiyuki channels Spectro energy through a blade that cuts faster
+                  than sound — and leaves no trace behind.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- char 4: sigrika -->
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="400">
+            <div class="characters-member d-flex align-items-start">
+              <div class="pic"><img src="assets/img/characters/sigrika.jpg" class="img-fluid" alt=""></div>
+              <div class="member-info">
+                <h4>Sigrika</h4>
+                <span>5★ Resonator · Fusion</span>
+                <p>Fierce, unyielding, and burning with purpose. Sigrika harnesses Fusion energy to devastate any who
+                  stand in her way — she fights not for glory, but for those she protects.</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section><!-- /characters section -->
+    <!-- ===================== /characters section ===================== -->
+
+    <!-- ===================== testimonials section ===================== -->
+    <!-- dark-background: section latar gelap -->
+    <section id="testimonials" class="testimonials section dark-background">
+
+      <!-- section-title: judul section testimonials -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Testimonials</h2>
+        <p>What Rovers across the world are saying about Wuthering Waves.</p>
+      </div>
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <!-- bootstrap carousel: id wajib sama dengan data-bs-target di tombol kontrol -->
+        <!-- carousel slide: komponen carousel bootstrap dengan animasi slide -->
+        <!-- data-bs-ride="carousel": mulai otomatis saat halaman dimuat -->
+        <div id="carousel-testimonials" class="carousel slide" data-bs-ride="carousel">
+
+          <!-- carousel-inner: wajib membungkus semua carousel-item -->
+          <div class="carousel-inner">
+
+            <!-- testimoni 1: AetherRover_EN (active = slide pertama yang tampil) -->
+            <div class="carousel-item active">
+              <div class="testimonial-item">
+                <!-- pic: wrapper foto, pakai class .pic dari section characters -->
+                <div class="pic"><img src="assets/img/testimonials/testimonials-1.webp" class="testimonial-img" alt=""></div>
+                <h3>AetherRover_EN</h3>
+                <h4>Global Player</h4>
+                <!-- stars: baris ikon bintang rating, bi-star-fill = bintang penuh -->
+                <div class="stars">
+                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                </div>
+                <p>
+                  <!-- bi-quote: ikon kutipan kiri dan kanan -->
+                  <i class="bi bi-quote quote-icon-left"></i>
+                  <span>The combat system is unlike anything I've played. Parrying, dodging, chaining Resonance Skills — it rewards actual skill, not just pulling the best characters.</span>
+                  <i class="bi bi-quote quote-icon-right"></i>
+                </p>
+              </div>
+            </div>
+
+            <!-- testimoni 2: SolarisDrifter -->
+            <div class="carousel-item">
+              <div class="testimonial-item">
+                <img src="assets/img/testimonials/testimonials-2.webp" class="testimonial-img" alt="">
+                <h3>SolarisDrifter</h3>
+                <h4>Day-1 Rover</h4>
+                <div class="stars">
+                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                </div>
+                <p>
+                  <i class="bi bi-quote quote-icon-left"></i>
+                  <span>Kuro Games actually listens to the community. The improvements from launch to now are massive. The open world exploration alone makes it worth every hour.</span>
+                  <i class="bi bi-quote quote-icon-right"></i>
+                </p>
+              </div>
+            </div>
+
+            <!-- testimoni 3: EchoHunter_JP (pakai foto hiyuki sebagai avatar) -->
+            <div class="carousel-item">
+              <div class="testimonial-item">
+                <img src="assets/img/characters/hiyuki.jpg" class="testimonial-img" alt="">
+                <h3>EchoHunter_JP</h3>
+                <h4>Completionist Rover</h4>
+                <div class="stars">
+                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                </div>
+                <p>
+                  <i class="bi bi-quote quote-icon-left"></i>
+                  <span>The Echo system is genius. Collecting and building Echo sets adds a whole layer of depth beyond just leveling characters. Hundreds of hours and I'm still finding new builds.</span>
+                  <i class="bi bi-quote quote-icon-right"></i>
+                </p>
+              </div>
+            </div>
+
+            <!-- testimoni 4: WaveRider_ID -->
+            <div class="carousel-item">
+              <div class="testimonial-item">
+                <img src="assets/img/testimonials/testimonials-4.webp" class="testimonial-img" alt="">
+                <h3>WaveRider_ID</h3>
+                <h4>Casual Rover</h4>
+                <div class="stars">
+                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                </div>
+                <p>
+                  <i class="bi bi-quote quote-icon-left"></i>
+                  <span>Even as a casual player the story pulled me in completely. Jinhsi's arc in Jinzhou is one of the best narratives I've experienced in any gacha game. Period.</span>
+                  <i class="bi bi-quote quote-icon-right"></i>
+                </p>
+              </div>
+            </div>
+
+            <!-- testimoni 5: TacetHunter_KR -->
+            <div class="carousel-item">
+              <div class="testimonial-item">
+                <img src="assets/img/testimonials/testimonials-5.webp" class="testimonial-img" alt="">
+                <h3>TacetHunter_KR</h3>
+                <h4>Endgame Rover</h4>
+                <div class="stars">
+                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                </div>
+                <p>
+                  <i class="bi bi-quote quote-icon-left"></i>
+                  <span>The endgame content keeps me coming back every patch. Tower of Adversity pushes your character-building to the limit. No other mobile game hits this level of polish.</span>
+                  <i class="bi bi-quote quote-icon-right"></i>
+                </p>
+              </div>
+            </div>
+
+          </div><!-- /carousel-inner -->
+
+          <!-- tombol navigasi carousel kiri (previous slide) -->
+          <!-- data-bs-target: harus sama dengan id carousel di atas -->
+          <!-- data-bs-slide="prev": arah geser ke kiri -->
+          <button class="carousel-control-prev" type="button" data-bs-target="#carousel-testimonials" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+          </button>
+
+          <!-- tombol navigasi carousel kanan (next slide) -->
+          <!-- data-bs-slide="next": arah geser ke kanan -->
+          <button class="carousel-control-next" type="button" data-bs-target="#carousel-testimonials" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+          </button>
+
+        </div><!-- /carousel -->
+      </div>
+    </section><!-- /testimonials section -->
+    <!-- ===================== /testimonials section ===================== -->
+
+    <!-- ===================== latest updates / blog section ===================== -->
+    <!-- light-background: section latar terang -->
+    <section id="recent-blog-postst" class="recent-blog-postst section light-background">
+
+      <!-- section-title: judul section latest updates -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Latest Updates</h2>
+        <p>Patch notes, character reveals, and community highlights from Wuthering Waves.</p>
+      </div>
+
+      <div class="container">
+
+        <!-- row gy-5: baris grid, gap vertikal 5 (lebih besar dari gy-4) antar post -->
+        <div class="row gy-5">
+
+          <!-- post 1: cosplayer recruitment -->
+          <!-- col-xl-4 col-md-6: 3 kolom di xl, 2 kolom di md, 1 kolom di mobile -->
+          <div class="col-xl-4 col-md-6">
+            <!-- post-item position-relative h-100: kartu post setinggi kolom -->
+            <!-- h-100: height 100% agar semua kartu sama tinggi dalam satu baris -->
+            <div class="post-item position-relative h-100" data-aos="fade-up" data-aos-delay="100">
+
+              <!-- post-img: wrapper gambar thumbnail -->
+              <!-- position-relative overflow-hidden: agar post-date (badge) terpotong rapi -->
+              <div class="post-img position-relative overflow-hidden">
+                <img src="assets\latest_update\cosplayer.jpg" class="img-fluid" alt="">
+                <!-- post-date: badge tanggal absolut di atas gambar -->
+                <span class="post-date">Apr 25</span>
+              </div>
+
+              <!-- post-content: area teks di bawah gambar -->
+              <!-- d-flex flex-column: konten disusun vertikal agar tombol "apply now" di bawah -->
+              <div class="post-content d-flex flex-column">
+                <h3 class="post-title">WuWa 2nd Anniversary Cosplayer Recruitment is Now Open!</h3>
+                <!-- meta: info penulis dan kategori -->
+                <!-- d-flex align-items-center: ikon dan teks sejajar tengah -->
+                <div class="meta d-flex align-items-center">
+                  <div class="d-flex align-items-center">
+                    <!-- bi-person: ikon orang untuk nama penulis -->
+                    <i class="bi bi-person"></i> <span class="ps-2">Kuro Games</span>
+                  </div>
+                  <!-- px-3: padding horizontal 3, text-black-50: warna abu separator -->
+                  <span class="px-3 text-black-50">/</span>
+                  <div class="d-flex align-items-center">
+                    <!-- bi-folder2: ikon folder untuk kategori -->
+                    <i class="bi bi-folder2"></i> <span class="ps-2">Event</span>
+                  </div>
+                </div>
+                <hr>
+                <!-- stretched-link: bootstrap utility - seluruh kartu jadi clickable -->
+                <a href="https://forms.gle/vm55eCLa9PTn5bBH6" target="_blank"
+                  class="readmore stretched-link"><span>Apply Now</span><i class="bi bi-arrow-right"></i></a>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- post 2: voidmatter crisis (video thumbnail) -->
+          <div class="col-xl-4 col-md-6">
+            <div class="post-item position-relative h-100" data-aos="fade-up" data-aos-delay="200">
+
+              <!-- post-video: thumbnail video (bukan gambar) -->
+              <div class="post-video position-relative overflow-hidden">
+                <video autoplay loop muted playsinline style="width:100%;display:block;">
+                  <source src="assets/latest_update/voidmatter.mp4" type="video/mp4">
+                </video>
+                <span class="post-date">May 03</span>
+              </div>
+
+              <div class="post-content d-flex flex-column">
+                <h3 class="post-title">Voidmatter Crisis: II — Meeting Minutes of Bilateral Cooperation</h3>
+                <div class="meta d-flex align-items-center">
+                  <div class="d-flex align-items-center">
+                    <i class="bi bi-person"></i> <span class="ps-2">Kuro Games</span>
+                  </div>
+                  <span class="px-3 text-black-50">/</span>
+                  <div class="d-flex align-items-center">
+                    <i class="bi bi-folder2"></i> <span class="ps-2">Story</span>
+                  </div>
+                </div>
+                <hr>
+                <a href="https://wutheringwaves.kurogames.com" target="_blank"
+                  class="readmore stretched-link"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- post 3: angry birds collaboration -->
+          <div class="col-xl-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+            <div class="post-item position-relative h-100">
+
+              <div class="post-img position-relative overflow-hidden">
+                <img src="assets\latest_update\cubes.jpg" class="img-fluid" alt="">
+                <span class="post-date">May 03</span>
+              </div>
+
+              <div class="post-content d-flex flex-column">
+                <h3 class="post-title">Wuthering Waves × Angry Birds Collaboration Livery is Now Live!</h3>
+                <div class="meta d-flex align-items-center">
+                  <div class="d-flex align-items-center">
+                    <i class="bi bi-person"></i> <span class="ps-2">Kuro Games</span>
+                  </div>
+                  <span class="px-3 text-black-50">/</span>
+                  <div class="d-flex align-items-center">
+                    <i class="bi bi-folder2"></i> <span class="ps-2">Collaboration</span>
+                  </div>
+                </div>
+                <hr>
+                <a href="https://wutheringwaves.kurogames.com" target="_blank"
+                  class="readmore stretched-link"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section><!-- /recent blog posts section -->
+    <!-- ===================== /latest updates / blog section ===================== -->
+
+  </main>
+
+  <!-- ===================== footer ===================== -->
+  <footer id="footer" class="footer">
+
+    <!-- footer-top: area utama footer dengan 4 kolom -->
+    <div class="container footer-top">
+      <!-- row gy-4: baris grid, gap vertikal saat mobile (kolom menumpuk) -->
+      <div class="row gy-4">
+
+        <!-- footer kolom 1: about (logo + info kontak) -->
+        <!-- col-lg-4 col-md-6: 4/12 di lg, 6/12 di md -->
+        <div class="col-lg-4 col-md-6 footer-about">
+          <!-- d-flex align-items-center: nama sitename sejajar tengah vertikal -->
+          <a href="makeoverwuwa.html" class="d-flex align-items-center">
+            <span class="sitename">WUTHERING WAVES</span>
+          </a>
+          <!-- pt-3: padding-top 3, memberi jarak antara nama dan info kontak -->
+          <div class="footer-contact pt-3">
+            <p>Developed by Kuro Games</p>
+            <p>Available on PC, iOS & Android</p>
+            <p class="mt-3"><strong>Official Site:</strong> <span>wutheringwaves.kurogames.com</span></p>
+            <p><strong>Support:</strong> <span>support@kurogames.com</span></p>
+          </div>
+        </div>
+
+        <!-- footer kolom 2: quick links -->
+        <!-- col-lg-2 col-md-3: 2/12 di lg, 3/12 di md (kolom sempit) -->
+        <div class="col-lg-2 col-md-3 footer-links">
+          <h4>Quick Links</h4>
+          <ul>
+            <!-- bi-chevron-right: ikon panah kecil di depan setiap link -->
+            <li><i class="bi bi-chevron-right"></i> <a href="#hero">Home</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="#about">About</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="#portfolio">Events</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="#characters">Characters</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="#testimonials">Testimonials</a></li>
+          </ul>
+        </div>
+
+        <!-- footer kolom 3: game info (link eksternal) -->
+        <div class="col-lg-2 col-md-3 footer-links">
+          <h4>Game Info</h4>
+          <ul>
+            <li><i class="bi bi-chevron-right"></i> <a href="https://wutheringwaves.kurogames.com"
+                target="_blank">Official Site</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="https://wutheringwaves.kurogames.com/en/main"
+                target="_blank">Download</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="https://wutheringwaves.kurogames.com/en/news"
+                target="_blank">News</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="https://discord.gg/wutheringwaves"
+                target="_blank">Discord</a></li>
+          </ul>
+        </div>
+
+        <!-- footer kolom 4: social media -->
+        <!-- col-lg-4 col-md-12: 4/12 di lg, full width di md ke bawah -->
+        <div class="col-lg-4 col-md-12">
+          <h4>Follow Wuthering Waves</h4>
+          <p>Stay updated with the latest news, events, and character reveals from Kuro Games.</p>
+          <!-- social-links d-flex: ikon sosmed berjajar horizontal -->
+          <div class="social-links d-flex">
+            <!-- bi-instagram, bi-youtube: ikon bootstrap untuk sosmed -->
+            <a href="https://www.instagram.com/wuthering_waves/" target="_blank"><i class="bi bi-instagram"></i></a>
+            <a href="https://www.youtube.com/@WutheringWaves" target="_blank"><i class="bi bi-youtube"></i></a>
+          </div>
+        </div>
+
+      </div>
+    </div><!-- /footer-top -->
+
+    <!-- footer bawah: copyright text -->
+    <!-- text-center: teks rata tengah -->
+    <!-- mt-4: margin-top 4 (jarak dari footer-top) -->
+    <div class="container copyright text-center mt-4">
+      <!-- px-1: padding horizontal tipis di nama sitename -->
+      <p>© <span>Copyright</span> <strong class="px-1 sitename">WUTHERING WAVES</strong> <span>All Rights
+          Reserved</span></p>
+      <div class="credits">
+        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+      </div>
+    </div>
+
+  </footer>
+  <!-- ===================== /footer ===================== -->
+
+  <!-- tombol scroll ke atas: muncul saat user scroll ke bawah -->
+  <!-- d-flex align-items-center justify-content-center: ikon panah di tengah tombol -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i
+      class="bi bi-arrow-up-short"></i></a>
+
+  <div id="preloader"></div>
+
+  <!-- vendor js files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
