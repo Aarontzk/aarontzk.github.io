@@ -32,49 +32,9 @@
   <!-- main css file -->
   <link href="assets/css/main.css" rel="stylesheet">
   <style>
-    .hero {
-      position: relative;
-      overflow: hidden;
-      background: none !important;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .hero video {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      z-index: 0;
-    }
-
-    .hero .container {
-      position: relative;
-      z-index: 2;
-    }
-
-    .hero .btn-getstarted,
-    .hero .btn-getstarted:focus {
-      color: var(--contrast-color);
-      background: var(--accent-color);
-      font-size: 14px;
-      padding: 8px 25px;
-      margin: 0;
-      border-radius: 5%;
-      transition: 0.3s;
-      text-decoration: none;
-      box-shadow: 0px 0px 12px rgba(255, 200, 50, 0.7);
-    }
-
-    .hero .btn-getstarted:hover {
-      background: color-mix(in srgb, var(--accent-color), transparent 15%);
-    }
-
-    .isotope-container .portfolio-item {
-      padding-bottom: 24px;
+    
+    .shadow {
+      box-shadow: 0px 0px 12px rgba(255, 200, 50, 0.7) !important;
     }
 
     body {
@@ -243,7 +203,7 @@
             <video src="https://wutheringwaves.kurogames.com/static4.0/assets/end-en-eb5ab687.mp4" autoplay loop muted
               class="h3-video"></video>
             <p>
-            <!-- px-xl-5: padding horizontal 5 di layar xl ke atas -->
+              <!-- px-xl-5: padding horizontal 5 di layar xl ke atas -->
             <div class="content px-xl-5" data-aos="fade-up" data-aos-delay="100">
               <h1 style="color: white;">
                 Where is everyone going? Never mind—let's get started.
@@ -296,7 +256,7 @@
           <div class="col-lg-5 order-1 order-lg-2 why-us-img">
             <!-- img-fluid: gambar responsif, lebar menyesuaikan kolom -->
             <!-- data-aos="fade": animasi fade sederhana (tanpa arah) -->
-            <img src="assets/img/why-us.png" class="img-fluid" data-aos="fade" data-aos-delay="300" alt="">
+            <img src="assets/img/why-us.png" class="img-fluid shadow radius" data-aos="fade" data-aos-delay="300" alt="">
           </div>
         </div>
 
@@ -327,7 +287,7 @@
           <div class="row mb-4">
             <div class="col-12">
               <!-- w-100: width 100% (full width container) -->
-              <video src="assets/img/portfolio/portfolio-9.mp4" class="img-fluid w-100" autoplay loop muted playsinline
+              <video src="assets/img/portfolio/portfolio-9.mp4" class="img-fluid w-100 shadow" autoplay loop muted playsinline
                 style="border-radius: 2.5%;"></video>
             </div>
           </div>
@@ -558,17 +518,20 @@
             <div class="carousel-item active">
               <div class="testimonial-item">
                 <!-- pic: wrapper foto, pakai class .pic dari section characters -->
-                <div class="pic"><img src="assets/img/testimonials/testimonials-1.webp" class="testimonial-img" alt=""></div>
+                <div class="pic"><img src="assets/img/testimonials/testimonials-1.webp" class="testimonial-img" alt="">
+                </div>
                 <h3>AetherRover_EN</h3>
                 <h4>Global Player</h4>
                 <!-- stars: baris ikon bintang rating, bi-star-fill = bintang penuh -->
                 <div class="stars">
-                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                    class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
                 </div>
                 <p>
                   <!-- bi-quote: ikon kutipan kiri dan kanan -->
                   <i class="bi bi-quote quote-icon-left"></i>
-                  <span>The combat system is unlike anything I've played. Parrying, dodging, chaining Resonance Skills — it rewards actual skill, not just pulling the best characters.</span>
+                  <span>The combat system is unlike anything I've played. Parrying, dodging, chaining Resonance Skills —
+                    it rewards actual skill, not just pulling the best characters.</span>
                   <i class="bi bi-quote quote-icon-right"></i>
                 </p>
               </div>
@@ -581,11 +544,13 @@
                 <h3>SolarisDrifter</h3>
                 <h4>Day-1 Rover</h4>
                 <div class="stars">
-                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                    class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
                 </div>
                 <p>
                   <i class="bi bi-quote quote-icon-left"></i>
-                  <span>Kuro Games actually listens to the community. The improvements from launch to now are massive. The open world exploration alone makes it worth every hour.</span>
+                  <span>Kuro Games actually listens to the community. The improvements from launch to now are massive.
+                    The open world exploration alone makes it worth every hour.</span>
                   <i class="bi bi-quote quote-icon-right"></i>
                 </p>
               </div>
@@ -598,11 +563,13 @@
                 <h3>EchoHunter_JP</h3>
                 <h4>Completionist Rover</h4>
                 <div class="stars">
-                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                    class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
                 </div>
                 <p>
                   <i class="bi bi-quote quote-icon-left"></i>
-                  <span>The Echo system is genius. Collecting and building Echo sets adds a whole layer of depth beyond just leveling characters. Hundreds of hours and I'm still finding new builds.</span>
+                  <span>The Echo system is genius. Collecting and building Echo sets adds a whole layer of depth beyond
+                    just leveling characters. Hundreds of hours and I'm still finding new builds.</span>
                   <i class="bi bi-quote quote-icon-right"></i>
                 </p>
               </div>
@@ -615,11 +582,13 @@
                 <h3>WaveRider_ID</h3>
                 <h4>Casual Rover</h4>
                 <div class="stars">
-                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                    class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
                 </div>
                 <p>
                   <i class="bi bi-quote quote-icon-left"></i>
-                  <span>Even as a casual player the story pulled me in completely. Jinhsi's arc in Jinzhou is one of the best narratives I've experienced in any gacha game. Period.</span>
+                  <span>Even as a casual player the story pulled me in completely. Jinhsi's arc in Jinzhou is one of the
+                    best narratives I've experienced in any gacha game. Period.</span>
                   <i class="bi bi-quote quote-icon-right"></i>
                 </p>
               </div>
@@ -632,11 +601,13 @@
                 <h3>TacetHunter_KR</h3>
                 <h4>Endgame Rover</h4>
                 <div class="stars">
-                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                    class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
                 </div>
                 <p>
                   <i class="bi bi-quote quote-icon-left"></i>
-                  <span>The endgame content keeps me coming back every patch. Tower of Adversity pushes your character-building to the limit. No other mobile game hits this level of polish.</span>
+                  <span>The endgame content keeps me coming back every patch. Tower of Adversity pushes your
+                    character-building to the limit. No other mobile game hits this level of polish.</span>
                   <i class="bi bi-quote quote-icon-right"></i>
                 </p>
               </div>
@@ -647,13 +618,15 @@
           <!-- tombol navigasi carousel kiri (previous slide) -->
           <!-- data-bs-target: harus sama dengan id carousel di atas -->
           <!-- data-bs-slide="prev": arah geser ke kiri -->
-          <button class="carousel-control-prev" type="button" data-bs-target="#carousel-testimonials" data-bs-slide="prev">
+          <button class="carousel-control-prev" type="button" data-bs-target="#carousel-testimonials"
+            data-bs-slide="prev">
             <span class="carousel-control-prev-icon"></span>
           </button>
 
           <!-- tombol navigasi carousel kanan (next slide) -->
           <!-- data-bs-slide="next": arah geser ke kanan -->
-          <button class="carousel-control-next" type="button" data-bs-target="#carousel-testimonials" data-bs-slide="next">
+          <button class="carousel-control-next" type="button" data-bs-target="#carousel-testimonials"
+            data-bs-slide="next">
             <span class="carousel-control-next-icon"></span>
           </button>
 
